@@ -1,0 +1,39 @@
+name: CI - HTML e CSS
+
+on:
+  push:
+    branches:
+      - development
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar ferramentas de validação
+        run: |
+          npm install -g html-validate
+          npm install -g stylelint
+          npm install -g stylelint-config-standard
+
+      - name: Validar HTML
+        run: html-validate "**/*.html"
+
+      - name: Validar CSS
+        run: stylelint "**/*.css"
+
+
+
+
+
