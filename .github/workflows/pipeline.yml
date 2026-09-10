@@ -10,7 +10,7 @@ on:
 
 jobs:
   validate:
-    name: Validar HTML e CSS
+    name: Validar projeto
     runs-on: ubuntu-latest
 
     steps:
@@ -20,39 +20,19 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Instalar ferramentas de validação
         run: |
-          npm install --global html-validate stylelint stylelint-config-standard
+          npm install -g html-validate stylelint stylelint-config-standard
 
-      - name: Criar configuração do HTML
-        run: |
-          cat > .htmlvalidate.json <<'EOF'
-          {
-            "extends": ["html-validate:recommended"],
-            "rules": {
-              "no-trailing-whitespace": "off"
-            }
-          }
-          EOF
-
-      - name: Validar HTML
+      - name: Confirmar HTML
         run: |
           html-validate "**/*.html"
 
-      - name: Criar configuração do CSS
-        run: |
-          cat > .stylelintrc.json <<'EOF'
-          {
-            "extends": ["stylelint-config-standard"]
-          }
-          EOF
-
-      - name: Validar CSS
+      - name: Confirmar CSS
         run: |
           stylelint "**/*.css"
 
       - name: Testes concluídos
-        run: echo "Validação HTML e CSS concluída com sucesso!"
-    
+        run: echo "HTML e CSS validados com sucesso!"
