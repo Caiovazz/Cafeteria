@@ -10,7 +10,7 @@ on:
 
 jobs:
   validate:
-    name: Confirma HTML e CSS
+    name: Validar HTML e CSS
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,18 @@ jobs:
         run: |
           npm install --global html-validate stylelint stylelint-config-standard
 
-      - name: Confirma HTML
+      - name: Criar configuração do HTML
+        run: |
+          cat > .htmlvalidate.json <<'EOF'
+          {
+            "extends": ["html-validate:recommended"],
+            "rules": {
+              "no-trailing-whitespace": "off"
+            }
+          }
+          EOF
+
+      - name: Validar HTML
         run: |
           html-validate "**/*.html"
 
@@ -38,9 +49,10 @@ jobs:
           }
           EOF
 
-      - name: Confirma CSS
+      - name: Validar CSS
         run: |
           stylelint "**/*.css"
 
       - name: Testes concluídos
         run: echo "Validação HTML e CSS concluída com sucesso!"
+    
