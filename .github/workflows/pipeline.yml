@@ -10,28 +10,37 @@ on:
 
 jobs:
   validate:
-    name: Validar projeto
+    name: Confirma HTML e CSS
     runs-on: ubuntu-latest
 
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
 
-      - name: Observação arquivos HTML
-        run: |
-          if ! find . -name "*.html" -not -path "./.git/*" | grep -q .; then
-            echo "Nenhum arquivo HTML encontrado."
-            exit 1
-          fi
-          echo "Arquivo HTML encontrado."
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Observação  arquivos CSS
+      - name: Instalar ferramentas de validação
         run: |
-          if ! find . -name "*.css" -not -path "./.git/*" | grep -q .; then
-            echo "Nenhum arquivo CSS encontrado."
-            exit 1
-          fi
-          echo "Arquivo CSS encontrado."
+          npm install --global html-validate stylelint stylelint-config-standard
 
-      - name: Finalizar validação
-        run: echo "Pipeline executado com sucesso!"
+      - name: Confirma HTML
+        run: |
+          html-validate "**/*.html"
+
+      - name: Criar configuração do CSS
+        run: |
+          cat > .stylelintrc.json <<'EOF'
+          {
+            "extends": ["stylelint-config-standard"]
+          }
+          EOF
+
+      - name: Confirma CSS
+        run: |
+          stylelint "**/*.css"
+
+      - name: Testes concluídos
+        run: echo "Validação HTML e CSS concluída com sucesso!"
