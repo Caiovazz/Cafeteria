@@ -1,0 +1,37 @@
+name: CI - HTML e CSS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validar projeto
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Observação arquivos HTML
+        run: |
+          if ! find . -name "*.html" -not -path "./.git/*" | grep -q .; then
+            echo "Nenhum arquivo HTML encontrado."
+            exit 1
+          fi
+          echo "Arquivo HTML encontrado."
+
+      - name: Observação  arquivos CSS
+        run: |
+          if ! find . -name "*.css" -not -path "./.git/*" | grep -q .; then
+            echo "Nenhum arquivo CSS encontrado."
+            exit 1
+          fi
+          echo "Arquivo CSS encontrado."
+
+      - name: Finalizar validação
+        run: echo "Pipeline executado com sucesso!"
