@@ -1,16 +1,181 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Aroma — Cafeteria Artesanal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS separado -->
+<link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
-    <header>
-    </header>
-    <main>
-    </main>
-    <footer>
-    </footer>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header>
+    <a href="#topo" class="logo">Café <span>Aroma</span></a>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#visite">Visite-nos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="topo">
+    <p class="subtitulo">Desde 1998 · Torra Artesanal</p>
+    <h1>Onde cada xícara <em>conta uma história</em></h1>
+    <p>Grãos selecionados, torra própria e um cantinho aconchegante no coração da cidade para você desacelerar.</p>
+    <a href="#menu" class="btn">Ver o Menu</a>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="secao" id="sobre">
+    <div class="sobre">
+      <div class="sobre-img">
+        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="Grãos de café sendo preparados">
+      </div>
+
+      <div class="sobre-texto">
+        <p class="subtitulo">Nossa História</p>
+        <h2>Paixão pelo café, do grão à xícara</h2>
+        <p>O Café Aroma nasceu de um sonho simples: servir um café honesto, feito com calma e cuidado. Selecionamos grãos de pequenos produtores e torramos tudo por aqui, todas as semanas.</p>
+        <p>Cada bebida é preparada na hora, por baristas que amam o que fazem — e você sente isso no primeiro gole.</p>
+
+        <div class="numeros">
+          <div class="numero">
+            <strong>25+</strong>
+            <span>Anos de história</span>
+          </div>
+          <div class="numero">
+            <strong>12</strong>
+            <span>Tipos de grãos</span>
+          </div>
+          <div class="numero">
+            <strong>100%</strong>
+            <span>Torra própria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MENU ================= -->
+  <section class="secao menu-secao" id="menu">
+    <div class="secao-topo">
+      <p class="subtitulo">Os Favoritos</p>
+      <h2>Feitos com carinho</h2>
+      <p>Uma pequena amostra do que preparamos todos os dias para você.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=700&q=80" alt="Espresso">
+        <div class="card-corpo">
+          <h3>Espresso Artesanal</h3>
+          <p>Encorpado, intenso e com crema perfeita. Para quem gosta do café em sua forma mais pura.</p>
+          <p class="preco">R$ 9</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=700&q=80" alt="Cappuccino">
+        <div class="card-corpo">
+          <h3>Cappuccino Cremoso</h3>
+          <p>Espresso duplo, leite vaporizado e uma espuma densa finalizada com canela.</p>
+          <p class="preco">R$ 15</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80" alt="Latte com arte">
+        <div class="card-corpo">
+          <h3>Latte de Baunilha</h3>
+          <p>Suave e aromático, com toque de baunilha natural e uma arte delicada na superfície.</p>
+          <p class="preco">R$ 17</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= GALERIA ================= -->
+  <section class="secao" id="galeria">
+    <div class="secao-topo">
+      <p class="subtitulo">Galeria</p>
+      <h2>Um pedacinho do nosso espaço</h2>
+    </div>
+
+    <div class="galeria">
+      <figure><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="Interior da cafeteria"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Xícara de café"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Barista preparando café"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" alt="Balcão da cafeteria"></figure>
+    </div>
+  </section>
+
+  <!-- ================= CITAÇÃO ================= -->
+  <section class="citacao">
+    <blockquote>"Um bom café não se apressa. Ele se aprecia — e é exatamente assim que preparamos o seu."</blockquote>
+    <cite>— Equipe Café Aroma</cite>
+  </section>
+
+  <!-- ================= VISITE-NOS ================= -->
+  <section class="secao" id="visite">
+    <div class="visite">
+      <div>
+        <p class="subtitulo">Visite-nos</p>
+        <h2>Venha tomar um café com a gente</h2>
+
+        <div class="info-item">
+          <h4>Endereço</h4>
+          <p>Rua das Amendoeiras, 128 — Centro<br>São Paulo · SP</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Contato</h4>
+          <p>(11) 98765-4321<br>ola@cafearoma.com.br</p>
+        </div>
+
+        <div class="info-item">
+          <h4>Redes Sociais</h4>
+          <p>@cafearoma.oficial</p>
+        </div>
+
+        <a href="#topo" class="btn btn-outline btn-reserva">Reservar Mesa</a>
+      </div>
+
+      <div class="horarios">
+        <h3>Horários de Funcionamento</h3>
+        <ul>
+          <li><span>Segunda a Quinta</span><span>08h — 20h</span></li>
+          <li><span>Sexta e Sábado</span><span>08h — 23h</span></li>
+          <li><span>Domingo</span><span>09h — 18h</span></li>
+          <li><span>Feriados</span><span>10h — 16h</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer>
+    <a href="#topo" class="logo">Café <span>Aroma</span></a>
+    <p>Torra artesanal, café de verdade.</p>
+
+    <div class="redes">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">WhatsApp</a>
+    </div>
+
+    <small>© 2025 Café Aroma · Todos os direitos reservados.</small>
+  </footer>
+
 </body>
 </html>
