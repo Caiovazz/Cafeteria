@@ -1,39 +1,39 @@
 name: CI - HTML e CSS
-
 on:
   push:
     branches:
+      - main
       - development
   pull_request:
     branches:
+      - main
       - development
 
 jobs:
   validate:
+    name: Validar projeto
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Baixar o código
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Instalar ferramentas de validação
         run: |
-          npm install -g html-validate
-          npm install -g stylelint
-          npm install -g stylelint-config-standard
+          npm install -g html-validate stylelint stylelint-config-standard
 
-      - name: Validar HTML
-        run: html-validate "**/*.html"
+      - name: Confirmar HTML
+        run: |
+          html-validate "**/*.html"
 
-      - name: Validar CSS
-        run: stylelint "**/*.css"
+      - name: Confirmar CSS
+        run: |
+          stylelint "**/*.css"
 
-
-
-
-
+      - name: Testes concluídos
+        run: echo "HTML e CSS validados com sucesso!"
