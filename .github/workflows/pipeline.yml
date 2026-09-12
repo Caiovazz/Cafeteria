@@ -3,11 +3,11 @@ on:
   push:
     branches:
       - main
-      - development
+      - desenvolvimento
   pull_request:
     branches:
       - main
-      - development
+      - desenvolvimento
 
 jobs:
   validate:
