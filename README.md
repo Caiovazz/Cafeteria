@@ -5,9 +5,9 @@ O projeto Caferia foi desenvolvido  com foco na apresentacão e organizacão do 
 
 Entre as principais funcionalidae estão:
 
--Organizacão das imformacões na Cafeteria;
+-Organização das imformações na Cafeteria;
 -Estrutura preparadas para futuras melhoras;
--Intégrão Continua em prática.
+-Integração Continua em prática.
 
 
 
