@@ -37,3 +37,6 @@ jobs:
 
       - name: Testes concluídos
         run: echo "HTML e CSS validados com sucesso!"
+
+      - name: Construir imagem Docker
+        run: docker build -t cafeteria-web .
