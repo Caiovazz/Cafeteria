@@ -1,4 +1,4 @@
-# Cafeteria
+# Coldyfactore WEB
 Landing page estática de uma cafeteria desenvolvida para praticar conceitos e ferramentas de DevOps, incluindo Git, GitHub, Docker e CI/CD.
 ## Funcionalidade 
 O projeto Caferia foi desenvolvido  com foco na apresentacão e organizacão do layout do Café.
